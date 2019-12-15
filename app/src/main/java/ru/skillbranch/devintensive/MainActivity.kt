@@ -16,7 +16,7 @@ import ru.skillbranch.devintensive.models.Bender
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
-        if (v?.id == R.id.btn_send) {
+        if (v?.id == R.id.iv_send) {
             val (phrase, color) = benderObj.listenAnswer(message.text.toString().toLowerCase())
             text.text = phrase
             message.setText("")
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         benderImage = iv_bender
         text = tv_text
         message = et_message
-        btnSend = btn_send
+        btnSend = iv_send
         btnSend.setOnClickListener(this)
 
         val status = savedInstanceState?.getString("STATUS") ?: Bender.Status.NORMAL.name
